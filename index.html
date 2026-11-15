@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>Graphite · 函数绘制器</title>
+<link rel="stylesheet" href="./assets/graphite.css">
+</head>
+<body>
+<div id="entry-screen">
+<header><div class="wrap brand"><span class="mark" aria-hidden="true">ƒ</span> Graphite</div></header>
+<main class="wrap">
+<div class="eyebrow">GRAPHITE / FUNCTION PLOTTER</div>
+<h1>函数绘制器</h1>
+<p class="intro">从一行表达式开始，在坐标系里观察它的形状。</p>
+<form id="form" class="panel">
+<label for="input">函数表达式</label>
+<div class="entry"><textarea id="input" rows="2" spellcheck="false" autocomplete="off" placeholder="例如 y = sin(x)"></textarea><button class="primary">绘制曲线 →</button></div>
+<div class="samples"><span>试试</span><button type="button" data-example="y=|x|^(2/3)+(10-x²)^0.5⋅sin(-18⋅π⋅|x|)">心形线</button><button type="button" data-example="y = sin(x)">sin(x)</button><button type="button" data-example="y = x^2">抛物线</button><button type="button" data-example="x^2 + y^2 = 9">隐式圆</button><button type="button" data-example="x = 3*cos(t); y = 2*sin(t)">参数椭圆</button></div>
+<p class="hint" id="syntax">每行一条曲线。显函数可用 @ 指定区间，例如 y=x² @ [-2, 2]。参数曲线默认 t ∈ [0, 2π]。支持 |x|、π、三角函数，以及 ln(x)、log₂(x)、log₁₀(x) 和 log(x, 底数)。</p>
+<p id="status" class="status" role="status"></p>
+</form>
+</main>
+</div>
+<section id="graph" class="panel graph" aria-label="绘图区" hidden>
+<div class="bar"><div><button type="button" id="back">‹ 返回输入</button><strong>直角坐标系</strong></div><div class="tools">
+<button type="button" id="out" aria-label="缩小">−</button><button type="button" id="in" aria-label="放大">+</button><button type="button" id="reset">复位</button><button type="button" id="replay">重播</button><button type="button" id="export">导出 SVG</button>
+</div></div>
+<svg id="plot" xmlns="http://www.w3.org/2000/svg" role="img" tabindex="0" aria-label="函数图像。可用方向键平移，使用加号和减号缩放。"></svg>
+<div id="legend" class="legend" aria-label="曲线图例"></div>
+</section>
+<script src="./assets/graphite.js"></script>
+</body>
+</html>
