@@ -124,7 +124,8 @@ function heartSignature([op,...parts]){
   if(op==='call'&&parts[0]==='sqrt')return ['^',heartSignature(parts[1]),['num',.5]];
   return [op,...parts.map(part=>Array.isArray(part)?heartSignature(part):part)];
 }
-const heartTree=JSON.stringify(heartSignature(parse($('heart-example').dataset.example).f.tree));
+const heartFormula='y=|x|^(2/3)+(10-x²)^0.5⋅sin(-18⋅π⋅|x|)';
+const heartTree=JSON.stringify(heartSignature(parse(heartFormula).f.tree));
 function isHeart(c){
   return c.type==='explicit'&&JSON.stringify(heartSignature(c.f.tree))===heartTree;
 }

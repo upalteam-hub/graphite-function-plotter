@@ -56,7 +56,7 @@
 </div>
 <button id="draw" class="primary">绘制曲线 →</button>
 </div>
-<div class="samples"><span>试试</span><button id="heart-example" type="button" data-example="y=|x|^(2/3)+(10-x²)^0.5⋅sin(-18⋅π⋅|x|)">心形线</button><button type="button" data-example="y = sin(x)">sin(x)</button><button type="button" data-example="y = x^2">抛物线</button><button type="button" data-example="x^2 + y^2 = 9">隐式圆</button><button type="button" data-example="x = 3*cos(t); y = 2*sin(t)">参数椭圆</button></div>
+<div class="samples"><span>试试</span><button type="button" data-example="y = sin(x)">sin(x)</button><button type="button" data-example="y = x^2">抛物线</button><button type="button" data-example="x^2 + y^2 = 9">隐式圆</button><button type="button" data-example="x = 3*cos(t); y = 2*sin(t)">参数椭圆</button></div>
 <p class="hint" id="syntax">每行一条曲线。显函数可用 @ 指定区间，例如 y=x² @ [-2, 2]。参数曲线默认 t ∈ [0, 2π]。支持 |x|、π、三角函数，以及 ln(x)、log₂(x)、log₁₀(x) 和 log(x, 底数)。</p>
 <p id="status" class="status" role="status"></p>
 <div id="saved-curves" class="saved-curves" hidden>
